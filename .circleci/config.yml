@@ -14,9 +14,6 @@ jobs:
           name: Installing packages
           command: yarn
       - run:
-          name: Testing Frontend
-          command: yarn test
-      - run:
           name: Building Frontend
           command: yarn build
       - aws-cli/install
