@@ -10,8 +10,9 @@ jobs:
     steps:
       - checkout:
           path: ~/app
-      - node/install-packages:
-          app-dir: ~/app/udagram-frontend
+      - run:
+          name: Installing packages
+          command: yarn
       - run:
           name: Testing Frontend
           command: yarn test
@@ -28,8 +29,9 @@ jobs:
     steps:
       - checkout:
           path: ~/app
-      - node/install-packages:
-          app-dir: ~/app/udagram-api
+      - run:
+          name: Installing packages
+          command: yarn
       - run:
           name: Build and Archive The Server
           command: |-
