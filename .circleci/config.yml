@@ -13,11 +13,19 @@ jobs:
       - node/install-packages:
           app-dir: ~/app/udagram-frontend
       - run:
+<<<<<<< HEAD
           name: Testing Frontend
           command: npm run test
+||||||| parent of 8c958c8 (try)
+        name: Testing Frontend
+        command: npm run test
+=======
+        name: Testing Frontend
+        command: yarn test
+>>>>>>> 8c958c8 (try)
       - run:
           name: Building Frontend
-          command: npm run build
+          command: yarn build
       - aws-cli/install
       - run:
           name: Deploy Frontend
@@ -33,8 +41,8 @@ jobs:
       - run:
           name: Build and Archive The Server
           command: |-
-            npm run build
-            npm run archive
+            yarn build
+            yarn archive
       - aws-cli/install
       - run:
           name: Deploying API
