@@ -44,7 +44,7 @@ jobs:
             eb use $EB_ENV
             eb deploy
             eb status
-            echo ssss $(pwd)
+            echo ssss $(cat .elasticbeanstalk/config.yml)
 workflows:
   build_and_deploy:
     jobs:
