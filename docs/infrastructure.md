@@ -26,4 +26,5 @@ URI: `s3://112-udagram-frontend`
 
 This bucket is for the image storing in the application.
 
-__IMPORTANT__: There's a problem in the image validation in the app and I don't know how to fix it, so this lead to a bug that you can't create a post! This is the developer's mistake not from my side!
+URI: `s3://*******` (private)
+
