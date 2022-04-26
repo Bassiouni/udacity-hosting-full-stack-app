@@ -10,15 +10,19 @@ jobs:
     steps:
       - checkout:
           path: ~/app
+      # installing deps 
       - run:
           name: Installing packages
           command: yarn
+      # building for production
       - run:
           name: Building Frontend
           command: yarn build
+      # installing aws cli
       - aws-cli/install
       - run:
           name: Deploy Frontend
+          # deploying
           command: aws s3 cp --recursive --acl public-read ./www $S3_FRONTEND_BUCKET
   api:
     working_directory: ~/app/udagram-api
@@ -34,6 +38,7 @@ jobs:
           command: |-
             yarn build
       - aws-cli/install
+      # installing eb cli
       - aws-eb/setup
       - run:
           name: Deploying API
@@ -41,6 +46,8 @@ jobs:
             eb init udagram-api --platform node.js --region $AWS_DEFAULT_REGION
             echo "deploy:
               artifact: www/Archive.zip" >> .elasticbeanstalk/config.yml
+            # sending envs to EB
+            printenv > .env
             eb use $EB_ENV
             eb deploy
             eb status
