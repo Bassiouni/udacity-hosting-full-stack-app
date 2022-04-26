@@ -4,11 +4,14 @@
 
 ## RDS
 
-The Postgres Database. URI: `postgres://user:pass@udagram.ccocd7qd0l2v.us-east-1.rds.amazonaws.com:5432/udagram`
+The Postgres Database.
+
+URI: `postgres://user:pass@udagram.ccocd7qd0l2v.us-east-1.rds.amazonaws.com:5432/udagram`
 
 ## Elastic Beanstalk
 
 This is the Application Development Environment for Node.js and the back-end.
+
 Environment URI: `http://udagram-api-dev2222.us-east-1.elasticbeanstalk.com`
 
 ## S3 Buckets
