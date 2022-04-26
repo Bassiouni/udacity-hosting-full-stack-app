@@ -34,7 +34,7 @@ jobs:
           command: |-
             yarn build
       - aws-cli/install
-      - aws-eb/install
+      - aws-eb/setup
       - run:
           name: Deploying API
           command: |-
