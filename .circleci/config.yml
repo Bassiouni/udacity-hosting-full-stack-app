@@ -13,16 +13,8 @@ jobs:
       - node/install-packages:
           app-dir: ~/app/udagram-frontend
       - run:
-<<<<<<< HEAD
-          name: Testing Frontend
-          command: npm run test
-||||||| parent of 8c958c8 (try)
-        name: Testing Frontend
-        command: npm run test
-=======
         name: Testing Frontend
         command: yarn test
->>>>>>> 8c958c8 (try)
       - run:
           name: Building Frontend
           command: yarn build
