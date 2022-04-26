@@ -19,6 +19,7 @@ Environment URI: `http://udagram-api-dev2222.us-east-1.elasticbeanstalk.com`
 ### Front-end Bucket
 
 URL: `http://112-udagram-frontend.s3-website-us-east-1.amazonaws.com`
+
 URI: `s3://112-udagram-frontend`
 
 ### Store Bucket
