@@ -36,7 +36,6 @@ jobs:
           name: Build and Archive The Server
           command: |-
             yarn build
-            yarn archive
       - aws-cli/install
       - run:
           name: Deploying API
