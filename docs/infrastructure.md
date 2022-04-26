@@ -1,6 +1,6 @@
 # Udagram Infrastructure
 
-[app infrastructure](./app-infrastructure.png)
+![app infrastructure](./app-infrastructure.png)
 
 ## RDS
 
