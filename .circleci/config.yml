@@ -13,8 +13,8 @@ jobs:
       - node/install-packages:
           app-dir: ~/app/udagram-frontend
       - run:
-        name: Testing Frontend
-        command: yarn test
+          name: Testing Frontend
+          command: yarn test
       - run:
           name: Building Frontend
           command: yarn build
