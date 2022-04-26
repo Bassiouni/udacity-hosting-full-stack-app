@@ -40,11 +40,10 @@ jobs:
           command: |-
             eb init udagram-api --platform node.js --region $AWS_DEFAULT_REGION
             echo "deploy:
-              artifact: www/Archive.zip"
+              artifact: www/Archive.zip" >> .elasticbeanstalk/config.yml
             eb use $EB_ENV
             eb deploy
             eb status
-            echo ssss $(cat .elasticbeanstalk/config.yml)
 workflows:
   build_and_deploy:
     jobs:
