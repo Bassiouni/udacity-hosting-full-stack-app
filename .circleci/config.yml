@@ -13,11 +13,11 @@ jobs:
       # installing deps 
       - run:
           name: Installing packages
-          command: yarn
+          command: yarn frontend:install
       # building for production
       - run:
           name: Building Frontend
-          command: yarn build
+          command: yarn frontend:build
       # installing aws cli
       - aws-cli/install
       - run:
@@ -32,25 +32,18 @@ jobs:
           path: ~/app
       - run:
           name: Installing packages
-          command: yarn
+          command: yarn api:install
       - run:
           name: Build and Archive The Server
           command: |-
-            yarn build
+            yarn api:build
       - aws-cli/install
       # installing eb cli
       - aws-eb/setup
       - run:
           name: Deploying API
           command: |-
-            eb init udagram-api --platform node.js --region $AWS_DEFAULT_REGION
-            echo "deploy:
-              artifact: www/Archive.zip" >> .elasticbeanstalk/config.yml
-            # sending envs to EB
-            printenv > .env
-            eb use $EB_ENV
-            eb deploy
-            eb status
+            yarn api:deploy
 workflows:
   build_and_deploy:
     jobs:
