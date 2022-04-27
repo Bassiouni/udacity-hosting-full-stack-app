@@ -24,7 +24,7 @@ jobs:
           name: Deploy Frontend
           # deploying
           command: |-
-            aws s3 cp --recursive --acl public-read ./www $S3_FRONTEND_BUCKET
+            aws s3 cp --recursive --acl public-read ./www $S3_FRONTEND_BUCKET --profile default
   api:
     working_directory: ~/app/udagram-api
     executor: node/default
