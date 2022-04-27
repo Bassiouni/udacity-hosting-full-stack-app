@@ -5,6 +5,9 @@ orbs:
   aws-eb: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
   frontend:
+    filters:
+      branches:
+        only: /main\/.*/
     working_directory: ~/app/udagram-frontend
     executor: node/default
     steps:
@@ -26,6 +29,9 @@ jobs:
           command: |-
             yarn deploy
   api:
+    filters:
+      branches:
+        only: /main\/.*/
     working_directory: ~/app/udagram-api
     executor: node/default
     steps:
@@ -48,11 +54,5 @@ jobs:
 workflows:
   build_and_deploy:
     jobs:
-      - frontend:
-          filters:
-            branches:
-              only: /main\/.*/
-      - api:
-          filters:
-            branches:
-              only: /main\/.*/
+      - frontend
+      - api
