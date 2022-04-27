@@ -13,11 +13,11 @@ jobs:
       # installing deps 
       - run:
           name: Installing packages
-          command: yarn frontend:install
+          command: yarn
       # building for production
       - run:
           name: Building Frontend
-          command: yarn frontend:build
+          command: yarn build
       # installing aws cli
       - aws-cli/install
       - run:
@@ -32,18 +32,18 @@ jobs:
           path: ~/app
       - run:
           name: Installing packages
-          command: yarn api:install
+          command: yarn
       - run:
           name: Build and Archive The Server
           command: |-
-            yarn api:build
+            yarn build
       - aws-cli/install
       # installing eb cli
       - aws-eb/setup
       - run:
           name: Deploying API
           command: |-
-            yarn api:deploy
+            yarn deploy
 workflows:
   build_and_deploy:
     jobs:
